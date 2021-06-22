@@ -3,6 +3,8 @@
 //Aquí creamos funciones
 //Es similar al controlador en REST
 import {tasks} from "./sample"
+import {User} from "./models/User"
+
 
 export const resolvers = {
     Query:{
@@ -12,13 +14,14 @@ export const resolvers = {
         myAge(){
             return 25
         },
-        greet(root, {name} ){
-           console.log(name) 
+        greet(root, {name}, ctx ){
+           console.log(ctx) 
            return `Hello ${name}!`
         },
         tasks(){
            return tasks
-        },
+        }
+        
     },
     Mutation: {
         //El _ es para decirle que no voy a usar la propiedad root
@@ -28,6 +31,11 @@ export const resolvers = {
             tasks.push(input)
             console.log(tasks)
             return input
+        },
+        createUser: async(_,{input}) => {
+           const newUser = await new User(input).save()
+           console.log(NewUser)
+           return newUser
         }
     }
 }

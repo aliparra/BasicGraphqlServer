@@ -25,8 +25,16 @@ const typeDefs = `
         number: Int
     }
 
+    type User {
+        _id: ID
+        firstname: String!
+        lastname: String!
+        age: Int
+    }
+
     type Mutation{
         createTask(input: TaskInput): Task
+        createUser(input: UserInput ): User
     }
     
     input TaskInput{
@@ -35,6 +43,11 @@ const typeDefs = `
         number: Int
     }
     
+    input UserInput{
+        firstname: String!
+        lastname: String!
+        age: Int
+    }
     
     
 `
