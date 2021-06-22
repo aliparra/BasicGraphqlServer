@@ -10,11 +10,33 @@ import buildSchema from "graphql"
 //Es similar a la ruta en REST
 
 const typeDefs = `
-    type Query {
+    type Query{
         hello: String
         myAge: Int
         greet(name:String!):String
+        tasks: [Task]
+        
     }
+
+    type Task{
+        _id: ID
+        title: String!
+        description: String!
+        number: Int
+    }
+
+    type Mutation{
+        createTask(input: TaskInput): Task
+    }
+    
+    input TaskInput{
+        title: String!
+        description: String!
+        number: Int
+    }
+    
+    
+    
 `
 
 export default makeExecutableSchema({
