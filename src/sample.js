@@ -43,4 +43,13 @@ query{
     number
   }
 }
+
+Para consultar un usuario con id
+
+query{
+  oneUser(_id: "60d315dc6df178e6a58829cc"){
+    firstname
+    _id
+  }
+}
 */

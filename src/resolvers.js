@@ -22,6 +22,9 @@ export const resolvers = {
     async Users() {
       return await User.find();
     },
+    async oneUser(_,{_id}){
+      return await User.findById({_id})
+    }
   },
   Mutation: {
     //El _ es para decirle que no voy a usar la propiedad root

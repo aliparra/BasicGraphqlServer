@@ -16,6 +16,7 @@ const typeDefs = `
         greet(name:String!):String
         tasks: [Task]
         Users: [User]
+        oneUser(_id: ID!): User
         
     }
 
