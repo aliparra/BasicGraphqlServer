@@ -93,7 +93,7 @@ I followed the instructions of this [tutorial](https://www.youtube.com/watch?v=W
 
 I added on my own the query show one user by id.
 
-Happy coding 
+Happy coding! :smile: 
 
 
 
