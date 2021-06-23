@@ -29,7 +29,7 @@ mutation{
     lastname 
     age
   }
-} |
+} 
 ```
 
 
