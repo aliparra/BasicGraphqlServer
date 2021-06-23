@@ -1,6 +1,6 @@
-import { makeExecutableSchema } from '@graphql-tools/schema'
-import {resolvers} from "./resolvers"
-import buildSchema from "graphql"
+import { makeExecutableSchema } from "@graphql-tools/schema";
+import { resolvers } from "./resolvers";
+import buildSchema from "graphql";
 
 //Define qué se puede consultar
 
@@ -50,10 +50,9 @@ const typeDefs = `
     }
     
     
-`
+`;
 
 export default makeExecutableSchema({
-    typeDefs: typeDefs,
-    resolvers: resolvers
-})
-
+  typeDefs: typeDefs,
+  resolvers: resolvers,
+});
