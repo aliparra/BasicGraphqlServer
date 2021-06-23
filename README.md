@@ -1,4 +1,4 @@
-# BasicGraphQL Server
+# Basic GraphQL Server
 
 ## GRAPHQL API BASIC CRUD WITH BABEL, EXPRESS, MONGODB AND MONGOOSE
 
