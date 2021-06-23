@@ -2,7 +2,7 @@
 //Aquí creamos funciones
 //Es similar al controlador en REST
 import { tasks } from "./sample";
-import  User from "./models/User";
+import User from "./models/User";
 
 export const resolvers = {
   Query: {
@@ -19,6 +19,9 @@ export const resolvers = {
     tasks() {
       return tasks;
     },
+    async Users() {
+      return await User.find();
+    },
   },
   Mutation: {
     //El _ es para decirle que no voy a usar la propiedad root
@@ -29,10 +32,16 @@ export const resolvers = {
       console.log(tasks);
       return input;
     },
-    createUser:(_, { input }) => {
+    async createUser(_, { input }) {
       const newUser = new User(input);
-      console.log(newUser);
-      return null;
+      await newUser.save();
+      return newUser;
+    },
+    async deleteUser(_, { _id }) {
+      return await User.findByIdAndDelete(_id);
+    },
+    async updateUser(_, { _id, input }) {
+      return await User.findByIdAndUpdate(_id, input, { new: true });
     },
   },
 };

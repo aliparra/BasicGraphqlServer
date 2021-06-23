@@ -9,4 +9,4 @@ const userSchema = new Schema({
   age: Number,
 });
 
-export default model('User', userSchema);
+export default model("User", userSchema);
